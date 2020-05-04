@@ -1,4 +1,4 @@
-package com.dingwd.netty.study.helloWorld;
+package com.dingwd.netty.study.httpHelloWorld;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

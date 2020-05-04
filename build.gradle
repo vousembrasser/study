@@ -9,22 +9,31 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
-//repositories {
-//    mavenCentral()
-//}
-
-allprojects {
-    repositories {
-        maven{ url 'https://maven.aliyun.com/repository/google'}
-        maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
-        maven{ url 'https://maven.aliyun.com/repository/public'}
-        maven{ url 'https://maven.aliyun.com/repository/jcenter'}
-        jcenter()
-        google()
-    }
+repositories {
+    mavenCentral()
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+tasks.withType(Javadoc) {
+    options.encoding = "UTF-8"
+}
+
+//allprojects {
+//repositories {
+//    maven{ url 'https://maven.aliyun.com/repository/google'}
+//    maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
+//    maven{ url 'https://maven.aliyun.com/repository/public'}
+//    maven{ url 'https://maven.aliyun.com/repository/jcenter'}
+//    jcenter()
+//    google()
+//}
+//}
+
 dependencies {
+    compileJava.options.encoding = 'UTF-8'
+    compileTestJava.options.encoding = 'UTF-8'
     implementation (
             'org.springframework.boot:spring-boot-starter',
             'io.netty:netty-all:4.1.49.Final'
