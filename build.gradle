@@ -1,6 +1,7 @@
 plugins {
     id 'org.springframework.boot' version '2.2.6.RELEASE'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'com.google.protobuf' version '0.8.8'
     id 'java'
 }
 
@@ -36,12 +37,34 @@ dependencies {
     compileTestJava.options.encoding = 'UTF-8'
     implementation (
             'org.springframework.boot:spring-boot-starter',
-            'io.netty:netty-all:4.1.49.Final'
+            'io.netty:netty-all:4.1.49.Final',
+            'com.google.protobuf:protobuf-java:3.11.4',
+            'io.grpc:grpc-netty-shaded:1.29.0',
+            'io.grpc:grpc-protobuf:1.29.0',
+            'io.grpc:grpc-stub:1.29.0'
+
     )
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 }
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.11.4"
+    }
+    plugins {
+        grpc {
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.29.0'
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+}
+
+//默认寻找main下得proto文件夹
 
 test {
     useJUnitPlatform()

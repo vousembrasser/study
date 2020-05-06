@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package com.dingwd.netty.study.grpc;
+
+option java_package = "com.dingwd.netty.study.proto";
+option java_outer_classname = "StudentProto";
+option java_multiple_files = true;
+
+service StudentService{
+
+  rpc GetRealNameByUsername(MyRequest) returns (MyResponse){}
+
+  rpc GetStudentsByAge(StudentRequest) returns (stream StudentResponse){}
+
+}
+
+message MyRequest{
+  string username = 1;
+}
+message MyResponse{
+  string realname = 2;
+}
+
+message StudentRequest{
+  int32 age = 1;
+}
+message StudentResponse{
+  string name = 2;
+  int32 age = 3;
+  string city = 4;
+}
