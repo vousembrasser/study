@@ -57,14 +57,25 @@ protobuf {
             artifact = 'io.grpc:protoc-gen-grpc-java:1.29.0'
         }
     }
+    generatedFilesBaseDir = "${rootDir}/src"
     generateProtoTasks {
         all()*.plugins {
-            grpc {}
+            grpc {
+                outputSubDir = 'java'
+            }
         }
     }
 }
 
 //默认寻找main下得proto文件夹
+//sourceSets{
+//    main {
+//        proto {
+//            srcDir "src/main/proto"
+//            srcDir "src/test/proto"
+//        }
+//    }
+//}
 
 test {
     useJUnitPlatform()

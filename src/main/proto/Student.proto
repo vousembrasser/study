@@ -2,15 +2,23 @@ syntax = "proto3";
 
 package com.dingwd.netty.study.grpc;
 
-option java_package = "com.dingwd.netty.study.proto";
+option java_package = "com.dingwd.netty.study.grpc.proto";
 option java_outer_classname = "StudentProto";
 option java_multiple_files = true;
 
 service StudentService{
 
+  //参数: 对象  返回值: 对象
   rpc GetRealNameByUsername(MyRequest) returns (MyResponse){}
 
+  //参数: 对象  返回值: 流对象 java中的 Iterator
   rpc GetStudentsByAge(StudentRequest) returns (stream StudentResponse){}
+
+  //参数: 流对象  返回值: 对象
+  rpc GetStudentsWrapperByAge(stream StudentRequest) returns (StudentResponseList){}
+
+  //参数 流 返回值 流
+  rpc BidirectionalTalk(stream StreamRequest) returns (stream StreamResponse){}
 
 }
 
@@ -18,14 +26,27 @@ message MyRequest{
   string username = 1;
 }
 message MyResponse{
-  string realname = 2;
+  string realname = 1;
 }
 
 message StudentRequest{
   int32 age = 1;
 }
 message StudentResponse{
-  string name = 2;
-  int32 age = 3;
-  string city = 4;
+  string name = 1;
+  int32 age = 2;
+  string city = 3;
+}
+
+message StudentResponseList{
+  //集合用repeated表示
+  repeated StudentResponse studentResponse  = 1;
+}
+
+message StreamRequest{
+  string request_info = 1;
+}
+
+message StreamResponse{
+  string response_info = 1;
 }

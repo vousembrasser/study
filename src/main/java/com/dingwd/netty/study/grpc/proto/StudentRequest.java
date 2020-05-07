@@ -4,26 +4,25 @@
 package com.dingwd.netty.study.grpc.proto;
 
 /**
- * Protobuf type {@code com.dingwd.netty.study.grpc.MyRequest}
+ * Protobuf type {@code com.dingwd.netty.study.grpc.StudentRequest}
  */
-public  final class MyRequest extends
+public  final class StudentRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:com.dingwd.netty.study.grpc.MyRequest)
-    MyRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:com.dingwd.netty.study.grpc.StudentRequest)
+    StudentRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use MyRequest.newBuilder() to construct.
-  private MyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use StudentRequest.newBuilder() to construct.
+  private StudentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private MyRequest() {
-    username_ = "";
+  private StudentRequest() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new MyRequest();
+    return new StudentRequest();
   }
 
   @java.lang.Override
@@ -31,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private MyRequest(
+  private StudentRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -49,10 +48,9 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 8: {
 
-            username_ = s;
+            age_ = input.readInt32();
             break;
           }
           default: {
@@ -76,51 +74,25 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.dingwd.netty.study.grpc.proto.StudentProto.internal_static_com_dingwd_netty_study_grpc_MyRequest_descriptor;
+    return com.dingwd.netty.study.grpc.proto.StudentProto.internal_static_com_dingwd_netty_study_grpc_StudentRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.dingwd.netty.study.grpc.proto.StudentProto.internal_static_com_dingwd_netty_study_grpc_MyRequest_fieldAccessorTable
+    return com.dingwd.netty.study.grpc.proto.StudentProto.internal_static_com_dingwd_netty_study_grpc_StudentRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.dingwd.netty.study.grpc.proto.MyRequest.class, com.dingwd.netty.study.grpc.proto.MyRequest.Builder.class);
+            com.dingwd.netty.study.grpc.proto.StudentRequest.class, com.dingwd.netty.study.grpc.proto.StudentRequest.Builder.class);
   }
 
-  public static final int USERNAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object username_;
+  public static final int AGE_FIELD_NUMBER = 1;
+  private int age_;
   /**
-   * <code>string username = 1;</code>
-   * @return The username.
+   * <code>int32 age = 1;</code>
+   * @return The age.
    */
-  public java.lang.String getUsername() {
-    java.lang.Object ref = username_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      username_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string username = 1;</code>
-   * @return The bytes for username.
-   */
-  public com.google.protobuf.ByteString
-      getUsernameBytes() {
-    java.lang.Object ref = username_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      username_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public int getAge() {
+    return age_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -137,8 +109,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getUsernameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
+    if (age_ != 0) {
+      output.writeInt32(1, age_);
     }
     unknownFields.writeTo(output);
   }
@@ -149,8 +121,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getUsernameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
+    if (age_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(1, age_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -162,13 +135,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.dingwd.netty.study.grpc.proto.MyRequest)) {
+    if (!(obj instanceof com.dingwd.netty.study.grpc.proto.StudentRequest)) {
       return super.equals(obj);
     }
-    com.dingwd.netty.study.grpc.proto.MyRequest other = (com.dingwd.netty.study.grpc.proto.MyRequest) obj;
+    com.dingwd.netty.study.grpc.proto.StudentRequest other = (com.dingwd.netty.study.grpc.proto.StudentRequest) obj;
 
-    if (!getUsername()
-        .equals(other.getUsername())) return false;
+    if (getAge()
+        != other.getAge()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,76 +153,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getUsername().hashCode();
+    hash = (37 * hash) + AGE_FIELD_NUMBER;
+    hash = (53 * hash) + getAge();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.dingwd.netty.study.grpc.proto.MyRequest parseFrom(
+  public static com.dingwd.netty.study.grpc.proto.StudentRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.dingwd.netty.study.grpc.proto.MyRequest parseFrom(
+  public static com.dingwd.netty.study.grpc.proto.StudentRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.dingwd.netty.study.grpc.proto.MyRequest parseFrom(
+  public static com.dingwd.netty.study.grpc.proto.StudentRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.dingwd.netty.study.grpc.proto.MyRequest parseFrom(
+  public static com.dingwd.netty.study.grpc.proto.StudentRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.dingwd.netty.study.grpc.proto.MyRequest parseFrom(byte[] data)
+  public static com.dingwd.netty.study.grpc.proto.StudentRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.dingwd.netty.study.grpc.proto.MyRequest parseFrom(
+  public static com.dingwd.netty.study.grpc.proto.StudentRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.dingwd.netty.study.grpc.proto.MyRequest parseFrom(java.io.InputStream input)
+  public static com.dingwd.netty.study.grpc.proto.StudentRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.dingwd.netty.study.grpc.proto.MyRequest parseFrom(
+  public static com.dingwd.netty.study.grpc.proto.StudentRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.dingwd.netty.study.grpc.proto.MyRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.dingwd.netty.study.grpc.proto.StudentRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.dingwd.netty.study.grpc.proto.MyRequest parseDelimitedFrom(
+  public static com.dingwd.netty.study.grpc.proto.StudentRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.dingwd.netty.study.grpc.proto.MyRequest parseFrom(
+  public static com.dingwd.netty.study.grpc.proto.StudentRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.dingwd.netty.study.grpc.proto.MyRequest parseFrom(
+  public static com.dingwd.netty.study.grpc.proto.StudentRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -262,7 +235,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.dingwd.netty.study.grpc.proto.MyRequest prototype) {
+  public static Builder newBuilder(com.dingwd.netty.study.grpc.proto.StudentRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -278,26 +251,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code com.dingwd.netty.study.grpc.MyRequest}
+   * Protobuf type {@code com.dingwd.netty.study.grpc.StudentRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.dingwd.netty.study.grpc.MyRequest)
-      com.dingwd.netty.study.grpc.proto.MyRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:com.dingwd.netty.study.grpc.StudentRequest)
+      com.dingwd.netty.study.grpc.proto.StudentRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dingwd.netty.study.grpc.proto.StudentProto.internal_static_com_dingwd_netty_study_grpc_MyRequest_descriptor;
+      return com.dingwd.netty.study.grpc.proto.StudentProto.internal_static_com_dingwd_netty_study_grpc_StudentRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dingwd.netty.study.grpc.proto.StudentProto.internal_static_com_dingwd_netty_study_grpc_MyRequest_fieldAccessorTable
+      return com.dingwd.netty.study.grpc.proto.StudentProto.internal_static_com_dingwd_netty_study_grpc_StudentRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dingwd.netty.study.grpc.proto.MyRequest.class, com.dingwd.netty.study.grpc.proto.MyRequest.Builder.class);
+              com.dingwd.netty.study.grpc.proto.StudentRequest.class, com.dingwd.netty.study.grpc.proto.StudentRequest.Builder.class);
     }
 
-    // Construct using com.dingwd.netty.study.grpc.proto.MyRequest.newBuilder()
+    // Construct using com.dingwd.netty.study.grpc.proto.StudentRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -315,7 +288,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      username_ = "";
+      age_ = 0;
 
       return this;
     }
@@ -323,17 +296,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.dingwd.netty.study.grpc.proto.StudentProto.internal_static_com_dingwd_netty_study_grpc_MyRequest_descriptor;
+      return com.dingwd.netty.study.grpc.proto.StudentProto.internal_static_com_dingwd_netty_study_grpc_StudentRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.dingwd.netty.study.grpc.proto.MyRequest getDefaultInstanceForType() {
-      return com.dingwd.netty.study.grpc.proto.MyRequest.getDefaultInstance();
+    public com.dingwd.netty.study.grpc.proto.StudentRequest getDefaultInstanceForType() {
+      return com.dingwd.netty.study.grpc.proto.StudentRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.dingwd.netty.study.grpc.proto.MyRequest build() {
-      com.dingwd.netty.study.grpc.proto.MyRequest result = buildPartial();
+    public com.dingwd.netty.study.grpc.proto.StudentRequest build() {
+      com.dingwd.netty.study.grpc.proto.StudentRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -341,9 +314,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.dingwd.netty.study.grpc.proto.MyRequest buildPartial() {
-      com.dingwd.netty.study.grpc.proto.MyRequest result = new com.dingwd.netty.study.grpc.proto.MyRequest(this);
-      result.username_ = username_;
+    public com.dingwd.netty.study.grpc.proto.StudentRequest buildPartial() {
+      com.dingwd.netty.study.grpc.proto.StudentRequest result = new com.dingwd.netty.study.grpc.proto.StudentRequest(this);
+      result.age_ = age_;
       onBuilt();
       return result;
     }
@@ -382,19 +355,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.dingwd.netty.study.grpc.proto.MyRequest) {
-        return mergeFrom((com.dingwd.netty.study.grpc.proto.MyRequest)other);
+      if (other instanceof com.dingwd.netty.study.grpc.proto.StudentRequest) {
+        return mergeFrom((com.dingwd.netty.study.grpc.proto.StudentRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.dingwd.netty.study.grpc.proto.MyRequest other) {
-      if (other == com.dingwd.netty.study.grpc.proto.MyRequest.getDefaultInstance()) return this;
-      if (!other.getUsername().isEmpty()) {
-        username_ = other.username_;
-        onChanged();
+    public Builder mergeFrom(com.dingwd.netty.study.grpc.proto.StudentRequest other) {
+      if (other == com.dingwd.netty.study.grpc.proto.StudentRequest.getDefaultInstance()) return this;
+      if (other.getAge() != 0) {
+        setAge(other.getAge());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -411,11 +383,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.dingwd.netty.study.grpc.proto.MyRequest parsedMessage = null;
+      com.dingwd.netty.study.grpc.proto.StudentRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.dingwd.netty.study.grpc.proto.MyRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.dingwd.netty.study.grpc.proto.StudentRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -425,78 +397,32 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object username_ = "";
+    private int age_ ;
     /**
-     * <code>string username = 1;</code>
-     * @return The username.
+     * <code>int32 age = 1;</code>
+     * @return The age.
      */
-    public java.lang.String getUsername() {
-      java.lang.Object ref = username_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        username_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    public int getAge() {
+      return age_;
     }
     /**
-     * <code>string username = 1;</code>
-     * @return The bytes for username.
-     */
-    public com.google.protobuf.ByteString
-        getUsernameBytes() {
-      java.lang.Object ref = username_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        username_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string username = 1;</code>
-     * @param value The username to set.
+     * <code>int32 age = 1;</code>
+     * @param value The age to set.
      * @return This builder for chaining.
      */
-    public Builder setUsername(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      username_ = value;
+    public Builder setAge(int value) {
+      
+      age_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string username = 1;</code>
+     * <code>int32 age = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearUsername() {
+    public Builder clearAge() {
       
-      username_ = getDefaultInstance().getUsername();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string username = 1;</code>
-     * @param value The bytes for username to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUsernameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      username_ = value;
+      age_ = 0;
       onChanged();
       return this;
     }
@@ -513,41 +439,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:com.dingwd.netty.study.grpc.MyRequest)
+    // @@protoc_insertion_point(builder_scope:com.dingwd.netty.study.grpc.StudentRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:com.dingwd.netty.study.grpc.MyRequest)
-  private static final com.dingwd.netty.study.grpc.proto.MyRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:com.dingwd.netty.study.grpc.StudentRequest)
+  private static final com.dingwd.netty.study.grpc.proto.StudentRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.dingwd.netty.study.grpc.proto.MyRequest();
+    DEFAULT_INSTANCE = new com.dingwd.netty.study.grpc.proto.StudentRequest();
   }
 
-  public static com.dingwd.netty.study.grpc.proto.MyRequest getDefaultInstance() {
+  public static com.dingwd.netty.study.grpc.proto.StudentRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<MyRequest>
-      PARSER = new com.google.protobuf.AbstractParser<MyRequest>() {
+  private static final com.google.protobuf.Parser<StudentRequest>
+      PARSER = new com.google.protobuf.AbstractParser<StudentRequest>() {
     @java.lang.Override
-    public MyRequest parsePartialFrom(
+    public StudentRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new MyRequest(input, extensionRegistry);
+      return new StudentRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<MyRequest> parser() {
+  public static com.google.protobuf.Parser<StudentRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<MyRequest> getParserForType() {
+  public com.google.protobuf.Parser<StudentRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.dingwd.netty.study.grpc.proto.MyRequest getDefaultInstanceForType() {
+  public com.dingwd.netty.study.grpc.proto.StudentRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
