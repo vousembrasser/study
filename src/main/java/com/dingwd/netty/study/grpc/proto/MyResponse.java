@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private MyResponse() {
-    realname_ = "";
+    realName_ = "";
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            realname_ = s;
+            realName_ = s;
             break;
           }
           default: {
@@ -87,36 +87,36 @@ private static final long serialVersionUID = 0L;
             com.dingwd.netty.study.grpc.proto.MyResponse.class, com.dingwd.netty.study.grpc.proto.MyResponse.Builder.class);
   }
 
-  public static final int REALNAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object realname_;
+  public static final int REAL_NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object realName_;
   /**
-   * <code>string realname = 1;</code>
-   * @return The realname.
+   * <code>string real_name = 1;</code>
+   * @return The realName.
    */
-  public java.lang.String getRealname() {
-    java.lang.Object ref = realname_;
+  public java.lang.String getRealName() {
+    java.lang.Object ref = realName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      realname_ = s;
+      realName_ = s;
       return s;
     }
   }
   /**
-   * <code>string realname = 1;</code>
-   * @return The bytes for realname.
+   * <code>string real_name = 1;</code>
+   * @return The bytes for realName.
    */
   public com.google.protobuf.ByteString
-      getRealnameBytes() {
-    java.lang.Object ref = realname_;
+      getRealNameBytes() {
+    java.lang.Object ref = realName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      realname_ = b;
+      realName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -137,8 +137,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getRealnameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, realname_);
+    if (!getRealNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, realName_);
     }
     unknownFields.writeTo(output);
   }
@@ -149,8 +149,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getRealnameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, realname_);
+    if (!getRealNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, realName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -167,8 +167,8 @@ private static final long serialVersionUID = 0L;
     }
     com.dingwd.netty.study.grpc.proto.MyResponse other = (com.dingwd.netty.study.grpc.proto.MyResponse) obj;
 
-    if (!getRealname()
-        .equals(other.getRealname())) return false;
+    if (!getRealName()
+        .equals(other.getRealName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -180,8 +180,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + REALNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getRealname().hashCode();
+    hash = (37 * hash) + REAL_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getRealName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -315,7 +315,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      realname_ = "";
+      realName_ = "";
 
       return this;
     }
@@ -343,7 +343,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.dingwd.netty.study.grpc.proto.MyResponse buildPartial() {
       com.dingwd.netty.study.grpc.proto.MyResponse result = new com.dingwd.netty.study.grpc.proto.MyResponse(this);
-      result.realname_ = realname_;
+      result.realName_ = realName_;
       onBuilt();
       return result;
     }
@@ -392,8 +392,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.dingwd.netty.study.grpc.proto.MyResponse other) {
       if (other == com.dingwd.netty.study.grpc.proto.MyResponse.getDefaultInstance()) return this;
-      if (!other.getRealname().isEmpty()) {
-        realname_ = other.realname_;
+      if (!other.getRealName().isEmpty()) {
+        realName_ = other.realName_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -425,78 +425,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object realname_ = "";
+    private java.lang.Object realName_ = "";
     /**
-     * <code>string realname = 1;</code>
-     * @return The realname.
+     * <code>string real_name = 1;</code>
+     * @return The realName.
      */
-    public java.lang.String getRealname() {
-      java.lang.Object ref = realname_;
+    public java.lang.String getRealName() {
+      java.lang.Object ref = realName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        realname_ = s;
+        realName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string realname = 1;</code>
-     * @return The bytes for realname.
+     * <code>string real_name = 1;</code>
+     * @return The bytes for realName.
      */
     public com.google.protobuf.ByteString
-        getRealnameBytes() {
-      java.lang.Object ref = realname_;
+        getRealNameBytes() {
+      java.lang.Object ref = realName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        realname_ = b;
+        realName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string realname = 1;</code>
-     * @param value The realname to set.
+     * <code>string real_name = 1;</code>
+     * @param value The realName to set.
      * @return This builder for chaining.
      */
-    public Builder setRealname(
+    public Builder setRealName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      realname_ = value;
+      realName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string realname = 1;</code>
+     * <code>string real_name = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearRealname() {
+    public Builder clearRealName() {
       
-      realname_ = getDefaultInstance().getRealname();
+      realName_ = getDefaultInstance().getRealName();
       onChanged();
       return this;
     }
     /**
-     * <code>string realname = 1;</code>
-     * @param value The bytes for realname to set.
+     * <code>string real_name = 1;</code>
+     * @param value The bytes for realName to set.
      * @return This builder for chaining.
      */
-    public Builder setRealnameBytes(
+    public Builder setRealNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      realname_ = value;
+      realName_ = value;
       onChanged();
       return this;
     }

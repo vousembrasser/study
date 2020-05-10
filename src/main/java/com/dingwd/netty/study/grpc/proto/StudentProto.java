@@ -59,28 +59,28 @@ public final class StudentProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\rStudent.proto\022\033com.dingwd.netty.study." +
-      "grpc\"\035\n\tMyRequest\022\020\n\010username\030\001 \001(\t\"\036\n\nM" +
-      "yResponse\022\020\n\010realname\030\001 \001(\t\"\035\n\016StudentRe" +
-      "quest\022\013\n\003age\030\001 \001(\005\":\n\017StudentResponse\022\014\n" +
-      "\004name\030\001 \001(\t\022\013\n\003age\030\002 \001(\005\022\014\n\004city\030\003 \001(\t\"\\" +
-      "\n\023StudentResponseList\022E\n\017studentResponse" +
-      "\030\001 \003(\0132,.com.dingwd.netty.study.grpc.Stu" +
-      "dentResponse\"%\n\rStreamRequest\022\024\n\014request" +
-      "_info\030\001 \001(\t\"\'\n\016StreamResponse\022\025\n\rrespons" +
-      "e_info\030\001 \001(\t2\341\003\n\016StudentService\022j\n\025GetRe" +
-      "alNameByUsername\022&.com.dingwd.netty.stud" +
-      "y.grpc.MyRequest\032\'.com.dingwd.netty.stud" +
-      "y.grpc.MyResponse\"\000\022q\n\020GetStudentsByAge\022" +
-      "+.com.dingwd.netty.study.grpc.StudentReq" +
-      "uest\032,.com.dingwd.netty.study.grpc.Stude" +
-      "ntResponse\"\0000\001\022|\n\027GetStudentsWrapperByAg" +
-      "e\022+.com.dingwd.netty.study.grpc.StudentR" +
-      "equest\0320.com.dingwd.netty.study.grpc.Stu" +
-      "dentResponseList\"\000(\001\022r\n\021BidirectionalTal" +
-      "k\022*.com.dingwd.netty.study.grpc.StreamRe" +
-      "quest\032+.com.dingwd.netty.study.grpc.Stre" +
-      "amResponse\"\000(\0010\001B3\n!com.dingwd.netty.stu" +
-      "dy.grpc.protoB\014StudentProtoP\001b\006proto3"
+      "grpc\"\035\n\tMyRequest\022\020\n\010username\030\001 \001(\t\"\037\n\nM" +
+      "yResponse\022\021\n\treal_name\030\001 \001(\t\"\035\n\016StudentR" +
+      "equest\022\013\n\003age\030\001 \001(\005\":\n\017StudentResponse\022\014" +
+      "\n\004name\030\001 \001(\t\022\013\n\003age\030\002 \001(\005\022\014\n\004city\030\003 \001(\t\"" +
+      "\\\n\023StudentResponseList\022E\n\017studentRespons" +
+      "e\030\001 \003(\0132,.com.dingwd.netty.study.grpc.St" +
+      "udentResponse\"%\n\rStreamRequest\022\024\n\014reques" +
+      "t_info\030\001 \001(\t\"\'\n\016StreamResponse\022\025\n\rrespon" +
+      "se_info\030\001 \001(\t2\341\003\n\016StudentService\022j\n\025GetR" +
+      "ealNameByUsername\022&.com.dingwd.netty.stu" +
+      "dy.grpc.MyRequest\032\'.com.dingwd.netty.stu" +
+      "dy.grpc.MyResponse\"\000\022q\n\020GetStudentsByAge" +
+      "\022+.com.dingwd.netty.study.grpc.StudentRe" +
+      "quest\032,.com.dingwd.netty.study.grpc.Stud" +
+      "entResponse\"\0000\001\022|\n\027GetStudentsWrapperByA" +
+      "ge\022+.com.dingwd.netty.study.grpc.Student" +
+      "Request\0320.com.dingwd.netty.study.grpc.St" +
+      "udentResponseList\"\000(\001\022r\n\021BidirectionalTa" +
+      "lk\022*.com.dingwd.netty.study.grpc.StreamR" +
+      "equest\032+.com.dingwd.netty.study.grpc.Str" +
+      "eamResponse\"\000(\0010\001B3\n!com.dingwd.netty.st" +
+      "udy.grpc.protoB\014StudentProtoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -97,7 +97,7 @@ public final class StudentProto {
     internal_static_com_dingwd_netty_study_grpc_MyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_dingwd_netty_study_grpc_MyResponse_descriptor,
-        new java.lang.String[] { "Realname", });
+        new java.lang.String[] { "RealName", });
     internal_static_com_dingwd_netty_study_grpc_StudentRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_dingwd_netty_study_grpc_StudentRequest_fieldAccessorTable = new
